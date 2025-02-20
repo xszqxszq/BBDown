@@ -8,7 +8,7 @@ env:
 
 jobs:
   set-date:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     outputs:
       date: ${{ steps.get_date.outputs.date }}
     steps:
@@ -56,7 +56,7 @@ jobs:
           path: BBDown_${{ needs.set-date.outputs.date }}_win-arm64.zip
 
   build-linux-x64-arm64:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: set-date
 
     steps:
